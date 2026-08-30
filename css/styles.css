@@ -1,0 +1,292 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    scroll-margin-top: 100px;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #000000;
+    color: #f0f0f0;
+}
+
+:root {
+    --color-gris: #393d42;
+    --color-negro: #120305;
+    --color-blanco: #f0f0f0;
+    --color-negro-claro:#1c1c1c;
+}
+
+
+header {
+    background-color: rgba(57, 61, 66, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 30px 0;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    z-index: 100;
+}
+
+.logo img{
+    width: 500px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    margin-top: -150px;
+    margin-bottom: 50px;
+
+}
+
+ul{   
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+li{
+font-size: 18px;
+    font-weight: 500;
+    margin: 0 20px;
+}
+
+ul li a{
+    color: #f0f0f0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+nav ul li {
+    transition: transform 0.2s ease;
+}
+
+nav ul li:hover {
+    transform: scale(1.2);
+}|
+
+section[id="inicio"] h1{
+    text-align: center;
+    margin: 20px 0;
+    text-decoration: dashed;
+}
+
+section[id="inicio"] p{
+    text-align: center;
+    margin: 20px 0;
+    text-decoration: dashed;
+}
+
+.carrusel {
+    width: 100%;
+    margin: 30px auto;
+    overflow: hidden;
+    background-color: rgba(57, 61, 66, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    position: relative;
+}
+
+.carrusel-track img{
+    min-width: 50%;
+    height: 1100px;
+    object-fit: cover;
+}
+
+.carrusel-track {
+    display: flex;
+    transition: transform 0.75s ease;
+}
+
+.service-card img {
+    border-radius: 15px;
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: 700px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.carrusel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.4);
+    color: #f0f0f0;
+    border: none;
+    padding: 15px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 5px;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+h1{
+    font-family: 'Cinzel Decorative';
+    font-style: cursive;
+    font-size: 150px;
+    color: #f0f0f0;
+    text-align: center;
+    margin: 30px 0;
+    padding: 60px 20px;
+    
+}
+
+#inicio p{
+    font-style: normal;
+    font-size: 25px;
+    color: #f0f0f0;
+    text-align: center;
+    margin-top: -70px;
+    margin-bottom: 100px;
+
+}
+
+.service-card {
+    background-color: rgba(57, 61, 66, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 45%;
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.services-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.service-card h3 {
+    color: var(--color-blanco);
+    margin: 10px 0;
+    font-size: 30px;
+}
+
+.service-card p {
+    font-size: 20px;
+    color: #f0f0f0;
+    line-height: 1.5;
+}
+
+#Estilos h2{
+    color: var(--color-blanco);
+    text-align: center;
+    font-size: 70px;
+    margin: 60px 0 40px 0;
+    text-shadow: 2px 2px 0px #f0f0f0, 3px 3px 3px rgba(0,0,0,0.5);
+}
+
+#sobre-mi h2, #contacto h2{
+    color: var(--color-blanco);
+    text-align: center;
+    font-size: 70px;
+    margin: 60px 0 40px 0;
+}
+
+#sobre-mi p, #contacto p {
+    font-size: 25px;
+    color: #f0f0f0;
+    line-height: 1.5;
+    max-width: 1040px;
+    margin: 0 auto 40px auto;
+    text-align: center;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: rgba(57, 61, 66, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+#contacto p a{
+    color: #f0f0f0;
+}
+
+.boton-wpp {
+    position: fixed;
+    bottom: 110px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    z-index: 100;
+}
+
+.boton-wpp img {
+    width: 100%;
+    height: 100%;
+}
+
+.boton-ig {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    z-index: 100;
+}
+
+.boton-ig img {
+    width: 90%;
+    height: 90%;
+}
+
+.hamburguesa {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--color-gris);
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+                            nav ul {
+                                flex-direction: column;
+                                align-items: center;
+                                gap: 10px;
+                            }
+                             .hamburguesa {
+                                            display: block;
+                                        }
+
+                                        nav ul {
+                                            display: none;
+                                            flex-direction: column;
+                                            align-items: center;
+                                            gap: 15px;
+                                            padding: 20px 0;
+                                        }
+
+                                        nav ul.abierto {
+                                            display: flex;
+                                        }
+}
