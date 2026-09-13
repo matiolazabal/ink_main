@@ -64,10 +64,10 @@ linksNav.forEach(link => {
         mouseEffect.currentTime = 0;
         mouseEffect.play();
     });
-    link.addEventListener('touchstart', () => {
-        mouseEffect.currentTime = 0;
-        mouseEffect.play();
-    });
+    link.addEventListener('touchend', () => {
+    mouseEffect.currentTime = 0;
+    mouseEffect.play();
+});
 });
 
 const musica = new Audio('sounds/GTASA-song.mp3');
