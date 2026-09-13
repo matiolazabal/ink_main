@@ -301,6 +301,16 @@ h1{
         display: block;
     }
 
+    header {
+        flex-wrap: wrap;
+    }
+
+    header nav {
+        position: static;
+        transform: none;
+        width: 100%;
+    }
+
     nav ul {
         display: none;
         flex-direction: column;
@@ -348,4 +358,3 @@ h1{
         font-size: 2.5rem;
     }
 }
-
