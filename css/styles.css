@@ -31,12 +31,25 @@ header {
     background-color: rgba(57, 61, 66, 0.3);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    padding: 30px 0;
+    padding: 30px 20px;
     width: 100%;
     position: sticky;
     top: 0;
     box-shadow: 0 2px 5px rgba(0,0,0,0.3);
     z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.header-izquierda {
+    width: 60px;
 }
 
 .logo img{
@@ -264,29 +277,73 @@ h1{
     background: none;
     border: none;
     font-size: 2rem;
-    color: var(--color-gris);
+    color: var(--color-blanco);
     cursor: pointer;
 }
 
+#btn-musica {
+    background: rgba(57, 61, 66, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    font-size: 1.5rem;
+    color: var(--color-blanco);
+    cursor: pointer;
+    padding: 8px 12px;
+    transition: background 0.3s ease;
+}
+
+#btn-musica:hover {
+    background: rgba(57, 61, 66, 0.8);
+}
+
 @media (max-width: 768px) {
-                            nav ul {
-                                flex-direction: column;
-                                align-items: center;
-                                gap: 10px;
-                            }
-                             .hamburguesa {
-                                            display: block;
-                                        }
+    .hamburguesa {
+        display: block;
+    }
 
-                                        nav ul {
-                                            display: none;
-                                            flex-direction: column;
-                                            align-items: center;
-                                            gap: 15px;
-                                            padding: 20px 0;
-                                        }
+    nav ul {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 20px 0;
+        background-color: rgba(57, 61, 66, 0.2);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        margin: 10px;
+    }
 
-                                        nav ul.abierto {
-                                            display: flex;
-                                        }
+    nav ul.abierto {
+        display: flex;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        padding: 30px 10px;
+    }
+
+    .logo img {
+        width: 250px;
+        margin-top: -50px;
+    }
+
+    .service-card {
+        width: 90%;
+    }
+
+    .carrusel-track img {
+        min-width: 100%;
+        height: 500px;
+    }
+
+    #sobre-mi p, #contacto p {
+        font-size: 18px;
+        max-width: 95%;
+    }
+
+    #Estilos h2, #sobre-mi h2, #contacto h2 {
+        font-size: 2.5rem;
+    }
 }
