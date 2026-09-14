@@ -234,7 +234,7 @@ section[id="inicio"] p {
     line-height: 1.5;
 }
 
-/* --- Estilos, Sobre mí, Contacto y CUIDADOS --- */
+/* --- Estilos, Perfil, Contacto y CUIDADOS --- */
 #Estilos h2 {
     color: var(--color-blanco);
     text-align: center;
@@ -244,7 +244,7 @@ section[id="inicio"] p {
 }
 
 /* Se agregó #cuidados h2 a este grupo */
-#sobre-mi h2, 
+#perfil h2, 
 #contacto h2,
 #cuidados h2 {
     color: var(--color-blanco);
@@ -253,7 +253,7 @@ section[id="inicio"] p {
     margin: 60px 0 40px 0;
 }
 
-#sobre-mi p, 
+#perfil p, 
 #contacto p {
     font-size: 25px;
     color: #f0f0f0;
@@ -280,10 +280,10 @@ section[id="inicio"] p {
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 20px;
-    max-width: 1100px; /* <--- Tarjeta más ancha */
+    max-width: 1100px;
     margin: 40px auto;
-    padding: 50px; /* <--- Más padding interno */
-    font-size: 1.1rem; /* <--- Letra un poquito más grande */
+    padding: 50px;
+    font-size: 1.1rem; 
 }
 
 .card-cuidados h3 {
@@ -344,7 +344,7 @@ section[id="inicio"] p {
 .card-cuidados > p:not(.subtitulo) {
     font-size: 1.1rem;
     margin-bottom: 30px; 
-    opacity: 0.9; /* Lo hace apenitas más tenue para que el subtítulo resalte más */
+    opacity: 0.9;
 }
 
 
@@ -363,6 +363,9 @@ section[id="inicio"] p {
 .boton-wpp img {
     width: 100%;
     height: 100%;
+    filter: grayscale(100%) brightness(1.2);
+    opacity: 0.8;
+    transition: filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
 }
 
 .boton-ig {
@@ -377,6 +380,16 @@ section[id="inicio"] p {
 .boton-ig img {
     width: 90%;
     height: 90%;
+    filter: grayscale(100%) brightness(1.2);
+    opacity: 0.8;
+    transition: filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+}
+
+.boton-wpp:hover img,
+.boton-ig:hover img {
+    filter: grayscale(0%) brightness(1);
+    opacity: 1;
+    transform: scale(1.1);
 }
 
 #btn-musica {
@@ -450,7 +463,7 @@ section[id="inicio"] p {
         height: 500px;
     }
 
-    #sobre-mi p, 
+    #perfil p, 
     #contacto p {
         font-size: 18px;
         max-width: 95%;
@@ -458,7 +471,7 @@ section[id="inicio"] p {
 
     /* Se agregó #cuidados h2 para que el título se achique bien en celulares */
     #Estilos h2, 
-    #sobre-mi h2, 
+    #perfil h2, 
     #contacto h2,
     #cuidados h2 {
         font-size: 2.5rem;
