@@ -41,6 +41,16 @@ h1 {
     padding: 60px 20px;
 }
 
+#cuidados h2{
+                font-family: 'Cinzel Decorative';
+                font-style: cursive;
+                font-size: 150px;
+                color: #f0f0f0;
+                text-align: center;
+                margin: 30px 0;
+                padding: 60px 20px;
+}
+
 ul {   
     list-style: none;
     display: flex;
@@ -87,7 +97,7 @@ header nav {
     height: auto;
     display: block;
     margin: 0 auto;
-    margin-top: -150px;
+    margin-top: -50px;
     margin-bottom: 50px;
 }
 
