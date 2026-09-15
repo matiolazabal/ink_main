@@ -1,18 +1,81 @@
+/* =========================================
+   ELEMENTOS DEL DOM Y SONIDOS
+========================================= */
 const titulo = document.querySelector('h1');
-titulo.addEventListener('click', () => {
-    if (titulo.textContent === 'Ink Vinito') {
-        titulo.textContent = 'Black Work Tattoo';
-    } else {
-        titulo.textContent = 'Ink Vinito';
-    }
-});
-
 const track = document.querySelector('.carrusel-track');
 const imagenes = document.querySelectorAll('.carrusel-track img');
 const btnPrev = document.querySelector('.prev');
 const btnNext = document.querySelector('.next');
-const mouseEffect = new Audio('sounds/GTASA-press.mp3');
 
+const hamburguesa = document.querySelector('.hamburguesa');
+const menu = document.querySelector('nav ul');
+const linksNav = document.querySelectorAll('nav ul li a');
+
+const btnMusica = document.getElementById('btn-musica');
+const secciones = document.querySelectorAll('main > section');
+
+// Audios
+const mouseEffect = new Audio('sounds/GTASA-press.mp3');
+const musica = new Audio('sounds/GTASA-song.mp3');
+musica.loop = true;
+musica.volume = 0.2;
+
+// Función auxiliar para reproducir el efecto de sonido
+function reproducirEfecto() {
+    mouseEffect.currentTime = 0;
+    mouseEffect.play();
+}
+
+
+/* =========================================
+   1. SISTEMA DE NAVEGACIÓN (SPA)
+========================================= */
+function mostrarSeccion(idDeseado) {
+    secciones.forEach(seccion => {
+        // Ignoramos la sección 'Estilos' porque está desactivada en tu CSS
+        if (seccion.id === 'Estilos') return;
+
+        if (seccion.id === idDeseado) {
+            seccion.classList.remove('oculto'); // Muestra la sección deseada
+        } else {
+            seccion.classList.add('oculto');    // Oculta las demás
+        }
+    });
+
+    // Mueve el scroll arriba suavemente al cambiar de vista
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Cargar la sección 'inicio' por defecto al abrir la página
+mostrarSeccion('inicio');
+
+
+/* =========================================
+   2. TÍTULO INTERACTIVO
+========================================= */
+titulo.addEventListener('click', () => {
+    titulo.textContent = (titulo.textContent === 'Ink Vinito') ? 'Black Work Tattoo' : 'Ink Vinito';
+});
+
+
+/* =========================================
+   TITULO INTERACTIVO CUIDADOS
+========================================= */
+const tituloCuidados = document.querySelector('#cuidados h2');
+
+if (tituloCuidados) {
+    tituloCuidados.addEventListener('click', () => {
+        if (tituloCuidados.textContent === 'Cuidados Post Tatuaje') {
+            tituloCuidados.textContent = 'Ink Vinito';
+        } else {
+            tituloCuidados.textContent = 'Cuidados Post Tatuaje';
+        }
+    });
+}
+
+/* =========================================
+   3. CARRUSEL DE IMÁGENES
+========================================= */
 let indice = 0;
 let intervalo;
 
@@ -31,49 +94,48 @@ function iniciarIntervalo() {
 }
 
 btnNext.addEventListener('click', () => {
-    mouseEffect.currentTime = 0;
-    mouseEffect.play();
+    reproducirEfecto();
     irA(indice + 1);
     iniciarIntervalo();
 });
 
 btnPrev.addEventListener('click', () => {
-    mouseEffect.currentTime = 0;
-    mouseEffect.play();
+    reproducirEfecto();
     irA(indice - 1);
     iniciarIntervalo();
 });
 
 iniciarIntervalo();
 
-const hamburguesa = document.querySelector('.hamburguesa');
-const menu = document.querySelector('nav ul');
 
+/* =========================================
+   4. MENÚ HAMBURGUESA Y NAVEGACIÓN
+========================================= */
 hamburguesa.addEventListener('click', () => {
     menu.classList.toggle('abierto');
 });
-hamburguesa.addEventListener('touchstart', () => {
-    mouseEffect.currentTime = 0;
-    mouseEffect.play();
-});
 
-const linksNav = document.querySelectorAll('nav ul li a');
+hamburguesa.addEventListener('touchstart', reproducirEfecto);
+
 linksNav.forEach(link => {
-    link.addEventListener('click', () => menu.classList.remove('abierto'));
-    link.addEventListener('mouseover', () => {
-        mouseEffect.currentTime = 0;
-        mouseEffect.play();
+    link.addEventListener('click', (e) => {
+        e.preventDefault(); // Evita el salto tradicional del ancla HTML (#)
+        
+        // Obtiene el ID del destino (ej: "#cuidados" -> "cuidados")
+        const targetId = link.getAttribute('href').replace('#', '');
+        
+        mostrarSeccion(targetId);
+        menu.classList.remove('abierto'); // Cierra el menú móvil al hacer clic
     });
-    link.addEventListener('touchend', () => {
-    mouseEffect.currentTime = 0;
-    mouseEffect.play();
-});
+
+    link.addEventListener('mouseover', reproducirEfecto);
+    link.addEventListener('touchend', reproducirEfecto);
 });
 
-const musica = new Audio('sounds/GTASA-song.mp3');
-musica.loop = true;
-musica.volume = 0.2;
-const btnMusica = document.getElementById('btn-musica');
+
+/* =========================================
+   5. REPRODUCTOR DE MÚSICA
+========================================= */
 btnMusica.addEventListener('click', () => {
     if (musica.paused) {
         musica.play();

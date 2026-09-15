@@ -28,6 +28,10 @@ section {
     scroll-margin-top: 100px;
 }
 
+.oculto{
+    display: none !important;
+}
+
 /* =========================================
    2. TIPOGRAFÍA Y ELEMENTOS BÁSICOS
 ========================================= */
@@ -172,7 +176,7 @@ section[id="inicio"] p {
 
 .carrusel-track img {
     min-width: 50%;
-    height: 1100px;
+    height: 80vh;
     object-fit: cover;
 }
 
@@ -200,7 +204,8 @@ section[id="inicio"] p {
 
 /* --- Tarjetas de Servicios --- */
 
-#Estilos {
+#Estilos,
+#Contacto{
     display: none;
 }
 
