@@ -431,10 +431,23 @@ section[id="inicio"] p {
     }
 
     header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         flex-wrap: wrap;
     }
 
+    .header-izquierda {
+        order: 1;
+        width: auto;
+    }
+
+    #btn-musica {
+        order: 2;
+    }
+
     header nav {
+        order: 3;
         position: static;
         transform: none;
         width: 100%;
@@ -451,7 +464,7 @@ section[id="inicio"] p {
         -webkit-backdrop-filter: blur(10px);
         border: 1px solid rgba(255, 255, 255, 0.1);
         border-radius: 10px;
-        margin: 10px;
+        margin: 10px 0;
         width: 100%;
     }
 
@@ -484,7 +497,6 @@ section[id="inicio"] p {
         max-width: 95%;
     }
 
-    /* Se agregó #cuidados h2 para que el título se achique bien en celulares */
     #Estilos h2, 
     #perfil h2, 
     #contacto h2,
