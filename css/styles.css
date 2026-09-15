@@ -487,7 +487,8 @@ section[id="inicio"] p {
     }
 
     #perfil p, 
-    #contacto p {
+    #contacto p,
+    .card-cuidados {
         font-size: 18px;
         max-width: 95%;
     }
