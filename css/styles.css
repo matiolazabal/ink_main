@@ -21,7 +21,7 @@ html {
 body {
     font-family: 'Segoe UI', sans-serif;
     background-color: #000000;
-    background-image: url('../img/wallpaper3.jpg'); 
+    background-image: url(''); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
