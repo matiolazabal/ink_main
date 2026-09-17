@@ -499,8 +499,10 @@ section[id="inicio"] p {
 
     .estilos-card img,
     .certificaciones-card img {
-        height: 100%;
-        width: 100%;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
     }
 
     #perfil p, 
