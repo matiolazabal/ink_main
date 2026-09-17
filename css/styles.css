@@ -500,7 +500,7 @@ section[id="inicio"] p {
     .estilos-card img,
     .certificaciones-card img {
         height: 100%;
-        width: auto;
+        width: 100%;
     }
 
     #perfil p, 
