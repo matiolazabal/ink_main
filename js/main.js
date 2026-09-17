@@ -31,11 +31,11 @@ function reproducirEfecto() {
    1. SISTEMA DE NAVEGACIÓN (SPA)
 ========================================= */
 function mostrarSeccion(idDeseado) {
-    region.forEach(region => {
-        if (region.id === idDeseado) {
-            region.classList.remove('oculto');
+    secciones.forEach(seccion => {
+        if (seccion.id === idDeseado) {
+            seccion.classList.remove('oculto');
         } else {
-            region.classList.add('oculto');
+            seccion.classList.add('oculto');
         }
     });
 
@@ -49,40 +49,20 @@ mostrarSeccion('inicio');
 /* =========================================
    2. TÍTULO INTERACTIVO
 ========================================= */
-titulo.addEventListener('click', () => {
-    titulo.textContent = (titulo.textContent === 'Ink Vinito') ? 'Black Work Tattoo' : 'Ink Vinito';
-});
 
-
-/* =========================================
-   TITULO INTERACTIVO CUIDADOS
-========================================= */
-const tituloCuidados = document.querySelector('#cuidados h2');
-
-if (tituloCuidados) {
-    tituloCuidados.addEventListener('click', () => {
-        if (tituloCuidados.textContent === 'Cuidados Post Tatuaje') {
-            tituloCuidados.textContent = 'Ink Vinito';
-        } else {
-            tituloCuidados.textContent = 'Cuidados Post Tatuaje';
-        }
+function hacerTituloInteractivo(selector, textoAlternativo) {
+    const titulo = document.querySelector(selector);
+    if (!titulo) return;
+    const textoOriginal = titulo.textContent;
+    titulo.addEventListener('click', () => {
+        titulo.textContent = (titulo.textContent === textoOriginal) ? textoAlternativo : textoOriginal;     
     });
 }
 
-/* =========================================
-   TITULO INTERACTIVO CUIDADOS
-========================================= */
-const tituloEstilos = document.querySelector('#estilos h2');
-
-if (tituloEstilos) {
-    tituloEstilos.addEventListener('click', () => {
-        if (tituloEstilos.textContent === 'Estilos') {
-            tituloEstilos.textContent = 'Ink Vinito';
-        } else {
-            tituloEstilos.textContent = 'Estilos';
-        }
-    });
-}
+hacerTituloInteractivo('#incio h1', 'Black Work Tattoo')
+hacerTituloInteractivo('#estilos h2', 'Ink Vinito')
+hacerTituloInteractivo('#cuidados h2', 'Ink Vinito')
+hacerTituloInteractivo('#certificaciones h2', 'Ink Vinito')
 
 /* =========================================
    3. CARRUSEL DE IMÁGENES
