@@ -1,7 +1,6 @@
 /* =========================================
-   ELEMENTOS DEL DOM Y SONIDOS
+   ELEMENTOS DEL DOM Y AUDIOS
 ========================================= */
-const titulo = document.querySelector('h1');
 const track = document.querySelector('.carrusel-track');
 const imagenes = document.querySelectorAll('.carrusel-track img');
 const btnPrev = document.querySelector('.prev');
@@ -20,12 +19,10 @@ const musica = new Audio('sounds/GTASA-song.mp3');
 musica.loop = true;
 musica.volume = 0.2;
 
-// Función auxiliar para reproducir el efecto de sonido
 function reproducirEfecto() {
     mouseEffect.currentTime = 0;
-    mouseEffect.play();
+    mouseEffect.play().catch(() => {});
 }
-
 
 /* =========================================
    1. SISTEMA DE NAVEGACIÓN (SPA)
@@ -39,30 +36,32 @@ function mostrarSeccion(idDeseado) {
         }
     });
 
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
 }
 
-// Cargar la sección 'inicio' por defecto al abrir la página
 mostrarSeccion('inicio');
 
-
 /* =========================================
-   2. TÍTULO INTERACTIVO
+   2. TÍTULOS INTERACTIVOS
 ========================================= */
-
 function hacerTituloInteractivo(selector, textoAlternativo) {
     const titulo = document.querySelector(selector);
     if (!titulo) return;
     const textoOriginal = titulo.textContent;
+    
     titulo.addEventListener('click', () => {
+        reproducirEfecto();
         titulo.textContent = (titulo.textContent === textoOriginal) ? textoAlternativo : textoOriginal;     
     });
 }
 
-hacerTituloInteractivo('#incio h1', 'Black Work Tattoo')
-hacerTituloInteractivo('#estilos h2', 'Ink Vinito')
-hacerTituloInteractivo('#cuidados h2', 'Ink Vinito')
-hacerTituloInteractivo('#certificaciones h2', 'Ink Vinito')
+hacerTituloInteractivo('#inicio h1', 'Black Work Tattoo');
+hacerTituloInteractivo('#estilos h2', 'Ink Vinito');
+hacerTituloInteractivo('#cuidados h2', 'Ink Vinito');
+hacerTituloInteractivo('#certificaciones h2', 'Ink Vinito');
 
 /* =========================================
    3. CARRUSEL DE IMÁGENES
@@ -75,6 +74,7 @@ function getPorcentaje() {
 }
 
 function irA(nuevoIndice) {
+    if (!track || imagenes.length === 0) return;
     indice = (nuevoIndice + imagenes.length) % imagenes.length;
     track.style.transform = `translateX(-${indice * getPorcentaje()}%)`;
 }
@@ -84,55 +84,59 @@ function iniciarIntervalo() {
     intervalo = setInterval(() => irA(indice + 1), 3000);
 }
 
-btnNext.addEventListener('click', () => {
-    reproducirEfecto();
-    irA(indice + 1);
+if (btnNext && btnPrev) {
+    btnNext.addEventListener('click', () => {
+        reproducirEfecto();
+        irA(indice + 1);
+        iniciarIntervalo();
+    });
+
+    btnPrev.addEventListener('click', () => {
+        reproducirEfecto();
+        irA(indice - 1);
+        iniciarIntervalo();
+    });
+
     iniciarIntervalo();
-});
-
-btnPrev.addEventListener('click', () => {
-    reproducirEfecto();
-    irA(indice - 1);
-    iniciarIntervalo();
-});
-
-iniciarIntervalo();
-
+}
 
 /* =========================================
    4. MENÚ HAMBURGUESA Y NAVEGACIÓN
 ========================================= */
-hamburguesa.addEventListener('click', () => {
-    menu.classList.toggle('abierto');
-});
-
-hamburguesa.addEventListener('touchstart', reproducirEfecto);
+if (hamburguesa && menu) {
+    hamburguesa.addEventListener('click', () => {
+        menu.classList.toggle('abierto');
+        reproducirEfecto();
+    });
+}
 
 linksNav.forEach(link => {
     link.addEventListener('click', (e) => {
-        e.preventDefault(); // Evita el salto tradicional del ancla HTML (#)
+        e.preventDefault();
         
-        // Obtiene el ID del destino (ej: "#cuidados" -> "cuidados")
         const targetId = link.getAttribute('href').replace('#', '');
-        
         mostrarSeccion(targetId);
-        menu.classList.remove('abierto'); // Cierra el menú móvil al hacer clic
+        
+        if (menu) {
+            menu.classList.remove('abierto');
+        }
     });
 
     link.addEventListener('mouseover', reproducirEfecto);
     link.addEventListener('touchend', reproducirEfecto);
 });
 
-
 /* =========================================
    5. REPRODUCTOR DE MÚSICA
 ========================================= */
-btnMusica.addEventListener('click', () => {
-    if (musica.paused) {
-        musica.play();
-        btnMusica.textContent = '🔊';
-    } else {
-        musica.pause();
-        btnMusica.textContent = '🔇';
-    }
-});
+if (btnMusica) {
+    btnMusica.addEventListener('click', () => {
+        if (musica.paused) {
+            musica.play();
+            btnMusica.textContent = '🔊';
+        } else {
+            musica.pause();
+            btnMusica.textContent = '🔇';
+        }
+    });
+}
