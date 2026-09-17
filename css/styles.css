@@ -492,11 +492,15 @@ section[id="inicio"] p {
         width: 90%;
     }
 
-    .carrusel-track img,
-    .estilos-card img,
-    .certificaciones-card img {
+    .carrusel-track img{
         min-width: 100%;
         height: 500px;
+    }
+
+    .estilos-card img,
+    .certificaciones-card img {
+        height: 100%;
+        width: auto;
     }
 
     #perfil p, 
