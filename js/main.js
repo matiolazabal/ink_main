@@ -31,18 +31,14 @@ function reproducirEfecto() {
    1. SISTEMA DE NAVEGACIÓN (SPA)
 ========================================= */
 function mostrarSeccion(idDeseado) {
-    secciones.forEach(seccion => {
-        // Ignoramos la sección 'Estilos' porque está desactivada en tu CSS
-        if (seccion.id === 'Estilos') return;
-
-        if (seccion.id === idDeseado) {
-            seccion.classList.remove('oculto'); // Muestra la sección deseada
+    region.forEach(region => {
+        if (region.id === idDeseado) {
+            region.classList.remove('oculto');
         } else {
-            seccion.classList.add('oculto');    // Oculta las demás
+            region.classList.add('oculto');
         }
     });
 
-    // Mueve el scroll arriba suavemente al cambiar de vista
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
@@ -69,6 +65,21 @@ if (tituloCuidados) {
             tituloCuidados.textContent = 'Ink Vinito';
         } else {
             tituloCuidados.textContent = 'Cuidados Post Tatuaje';
+        }
+    });
+}
+
+/* =========================================
+   TITULO INTERACTIVO CUIDADOS
+========================================= */
+const tituloEstilos = document.querySelector('#estilos h2');
+
+if (tituloEstilos) {
+    tituloEstilos.addEventListener('click', () => {
+        if (tituloEstilos.textContent === 'Estilos') {
+            tituloEstilos.textContent = 'Ink Vinito';
+        } else {
+            tituloEstilos.textContent = 'Estilos';
         }
     });
 }

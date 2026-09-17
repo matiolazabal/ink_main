@@ -45,10 +45,11 @@ h1 {
     padding: 60px 20px;
 }
 
-#cuidados h2 {
+#cuidados h2,
+#estilos h2,
+#certificaciones h2 {
     font-family: 'Cinzel Decorative';
     font-style: cursive;
-    font-size: 150px;
     color: #f0f0f0;
     text-align: center;
     margin: 30px 0;
@@ -202,18 +203,18 @@ section[id="inicio"] p {
 }
 
 /* --- Tarjetas de Servicios y Ocultos --- */
-#Estilos,
 #Contacto {
     display: none;
 }
 
-.services-container {
+.estilos-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.service-card {
+.estilos-card, 
+.certificaciones-card{
     background-color: rgba(57, 61, 66, 0.2);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -225,7 +226,7 @@ section[id="inicio"] p {
     border-radius: 20px;
 }
 
-.service-card img {
+.estilos-card img {
     border-radius: 15px;
     display: block;
     margin: 0 auto;
@@ -235,30 +236,37 @@ section[id="inicio"] p {
     transition: transform 0.3s ease;
 }
 
-.service-card h3 {
+.certificaciones-card  img {
+    border-radius: 15px;
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.estilos-card h3,
+.certificaciones-card h3 {
     color: var(--color-blanco);
     margin: 10px 0;
     font-size: 30px;
 }
 
-.service-card p {
+.estilos-card p,
+.certificaciones-card p {
     font-size: 20px;
     color: #f0f0f0;
     line-height: 1.5;
 }
 
 /* --- Estilos, Perfil, Contacto y CUIDADOS --- */
-#Estilos h2 {
-    color: var(--color-blanco);
-    text-align: center;
-    font-size: 70px;
-    margin: 60px 0 40px 0;
-    text-shadow: 2px 2px 0px #f0f0f0, 3px 3px 3px rgba(0,0,0,0.5);
-}
 
 #perfil h2, 
 #contacto h2,
-#cuidados h2 {
+#estilos h2,
+#cuidados h2,
+#certificaciones h2 {
     color: var(--color-blanco);
     text-align: center;
     font-size: 70px;
@@ -479,7 +487,8 @@ section[id="inicio"] p {
         margin-top: -50px;
     }
 
-    .service-card {
+    .estilos-card,
+    .certificaciones-card {
         width: 90%;
     }
 
@@ -495,7 +504,8 @@ section[id="inicio"] p {
         max-width: 95%;
     }
 
-    #Estilos h2, 
+    #estilos h2,
+    #certificaciones h2, 
     #perfil h2, 
     #contacto h2,
     #cuidados h2 {

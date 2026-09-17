@@ -21,21 +21,23 @@
         <nav>
             <ul>
                 <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#estilos">Estilos</a></li>
                 <li><a href="#cuidados">Cuidados</a></li>
+                <li><a href="#certificaciones">Certificaciones</a></li>
             </ul>
         </nav>
         <button id="btn-musica">🔇</button>
     </header>
 
     <main> 
-        <!-- SECCIÓN 1: INICIO -->
+        
+        <!-- region INICIO -->
         <section id="inicio">
             <h1>Ink Vinito</h1>
             <div class="logo">
                 <img src="img/logov2.png" alt="logo de Ink Vinito" class="logo">
             </div>
             
-                    <!-- SECCIÓN 3: PERFIL -->
         <section id="perfil">
             <p> Buenas, soy Manu.<br><br>
             La idea acá es que puedas liberar tus ideas y si te queres pintar toda la cara de negro te sientas libre de hacerlo.<br><br>
@@ -69,38 +71,42 @@
             </div>
         </section>
 
-        <!-- SECCIÓN 2: ESTILOS (Oculta por CSS) -->
-        <section id="Estilos">
+        <!-- endregion -->
+
+
+        <!-- region ESTILOS -->
+        <section id="estilos">
             <h2>Estilos</h2>
-            <div class="services-container">
-                <article class="service-card">
+            <div class="estilos-container">
+                <article class="estilos-card">
                     <img src="img/carrusel/c8.jpeg" alt="Black Work">
                     <h3>Black Work</h3>
                     <p>Estilo que utiliza exclusivamente tinta negra en grandes áreas sólidas, creando diseños de alto impacto visual con contrastes marcados.</p>
                 </article>
 
-                <article class="service-card">
+                <article class="estilos-card">
                     <img src="img/carrusel/c4.jpeg" alt="Cybersigilism">
                     <h3>Cybersigilism</h3>
                     <p>Estilo futurista inspirado en la estética cyberpunk, con formas abstractas, símbolos y líneas que evocan circuitos y glifos digitales.</p>
                 </article>
 
-                <article class="service-card">
+                <article class="estilos-card">
                     <img src="img/carrusel/c1.jpeg" alt="Neotribal">
                     <h3>Neotribal</h3>
                     <p>Reinterpretación moderna del tatuaje tribal tradicional, con formas orgánicas, puntas afiladas y patrones que envuelven el cuerpo.</p>
                 </article>
 
-                <article class="service-card">
+                <article class="estilos-card">
                     <img src="img/carrusel/c9.jpeg" alt="Fine Line">
                     <h3>Fine Line</h3>
                     <p>Estilo minimalista de líneas ultrafinas y delicadas, ideal para diseños detallados, florales o geométricos con una estética suave y elegante.</p>
                 </article>
             </div>
         </section>
-    
+        <!-- endregion -->
+
         
-        <!-- SECCIÓN 4: CUIDADOS -->
+        <!-- region CUIDADOS -->
         <section id="cuidados">
             <h2>Cuidados Post Tatuaje</h2>
             <div class="card-cuidados">
@@ -121,7 +127,7 @@
                 </div>
 
                 <div class="bloque">
-                    <h3>DÍAS 1–3 — LIMPIAR + HIDRATAR</h3>
+                    <h3>DÍAS 1 a 3 — LIMPIAR + HIDRATAR</h3>
                     <p>Repetí esta rutina 1 o 2 veces al día:</p>
                     <ol>
                         <li>Lavar suavemente con agua tibia y jabón neutro.</li>
@@ -132,7 +138,7 @@
                 </div>
 
                 <div class="bloque">
-                    <h3>DÍAS 4–7 — CICATRIZACIÓN</h3>
+                    <h3>DÍAS 4 a 7 — CICATRIZACIÓN</h3>
                     <p>Es normal que aparezcan:</p>
                     <ul>
                         <li>Picazón.</li>
@@ -174,19 +180,33 @@
             </div>
         </section>
 
-        <!-- SECCIÓN 5: CONTACTO -->
-        <section id="contacto">
-            <h2>Contacto</h2>
-            <p><a href="https://www.instagram.com/ink_vinito" target="_blank">@ink_vinito</a></p>
-            <p><a href="tel:+5491167478239">+54 9 11 6747-8239</a></p>
-        </section>
+        <!-- endregion -->
+
+        
+        <!-- region CERTIFICACIONES -->
+        <section id="certificaciones">
+            <h2>Certificaciones</h2>
+            <div class="estilos-container">
+                <article class="certificaciones-card">
+                    <h3>Tatuador Profesional</h3>
+                    <img src="img/certificacion (1).jpeg" alt="Tatuador Profesional">
+                    <!--<p></p>-->
+                </article>
+
+                <article class="certificaciones-card">
+                    <h3>Bioseguridad</h3>
+                    <img src="img/certificacion (2).jpeg" alt="Bioseguridad">
+                    <!--<p></p>-->
+                </article>
+
+        <!-- endregion -->  
     </main>
 
     <footer>    
         <p>&copy; 2026 Ink_Vinito. Todos los derechos reservados.</p>
     </footer>
 
-    <!-- Botones Flotantes -->
+    <!-- region Botones Flotantes -->
     <a href="https://wa.me/5491167478239" class="boton-wpp" target="_blank">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
     </a>
@@ -199,6 +219,9 @@
     <audio id="GTASA-song" loop autoplay>
         <source src="audio/GTASA-song.mp3" type="audio/mpeg">
     </audio>
+    
+    <!-- endregion -->
+
 
     <!-- Script principal -->
     <script src="js/main.js"></script>
