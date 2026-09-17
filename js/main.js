@@ -31,11 +31,11 @@ function reproducirEfecto() {
    1. SISTEMA DE NAVEGACIÓN (SPA)
 ========================================= */
 function mostrarSeccion(idDeseado) {
-    region.forEach(region => {
-        if (region.id === idDeseado) {
-            region.classList.remove('oculto');
+    secciones.forEach(seccion => {
+        if (seccion.id === idDeseado) {
+            seccion.classList.remove('oculto');
         } else {
-            region.classList.add('oculto');
+            seccion.classList.add('oculto');
         }
     });
 
